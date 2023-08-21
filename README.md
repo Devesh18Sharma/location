@@ -1,33 +1,42 @@
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
+# Location Chrome Extension
 
-## Getting Started
+![Extension Preview](./preview.png)
 
-First, run the development server:
 
-```bash
-pnpm dev
-# or
-npm run dev
-```
+## Overview
 
-Open your browser and load the appropriate development build. For example, if you are developing for the chrome browser, using manifest v3, use: `build/chrome-mv3-dev`.
+Welcome to the Location Chrome Extension! This extension allows you to easily retrieve and display your country and city based on your IP address. With a clean and user-friendly design, you can access your location information with just a click.
 
-You can start editing the popup by modifying `popup.tsx`. It should auto-update as you make changes. To add an options page, simply add a `options.tsx` file to the root of the project, with a react component default exported. Likewise to add a content page, add a `content.ts` file to the root of the project, importing some module and do some logic, then reload the extension on your browser.
+## Functionality
 
-For further guidance, [visit our Documentation](https://docs.plasmo.com/)
+- Click the Chrome extension icon to open the popup.
+- The popup displays a centred button with the text "Show my location."
+- When you click the button, it enters a loading state while your location is being determined.
+- Once the location is fetched, it displays your country and city in a formatted message.
+- If there is an error in fetching the location, it displays an error message.
+- You can also access the link to Plasmo documentation for more information.
 
-## Making production build
+## How It Works
 
-Run the following:
+1. The extension makes use of the IPify API to fetch your IP address.
+2. The IP address is then used to call the ipinfo.io API to get your country and city information.
+3. The fetched data is displayed in the popup interface using React and styled with Tailwind CSS.
 
-```bash
-pnpm build
-# or
-npm run build
-```
+## Installation
 
-This should create a production bundle for your extension, ready to be zipped and published to the stores.
+1. Clone the repository.
+2. Install dependencies using `pnpm install`.
+3. Rename the `.env.example` file to `.env` and replace `YOUR_IPINFO_TOKEN` with your actual IPinfo access token.
 
-## Submit to the webstores
+## Usage
 
-The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
+1. Click on the Chrome extension icon to open the popup.
+2. Click the "Show my location" button to retrieve and display your country and city.
+
+## Video Demonstration
+
+[Watch the Video](https://drive.google.com/file/d/1OjQLQbeP21V0LgNivZF79t5jk0GhNn5T/view?usp=drivesdk)
+
+## Contributing
+
+Contributions are welcome!

@@ -1,8 +1,10 @@
+require('dotenv').config();
 import React, { useState } from "react";
 import "./style.css"
 import axios from "axios"; // Import Axios for making API requests
 
 function IndexPopup() {
+  const ipinfoToken = process.env.IPINFO_TOKEN;
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(false); // State for loading button
 
